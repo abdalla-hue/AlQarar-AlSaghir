@@ -1,0 +1,176 @@
+body { font-family: Tahoma, Arial, sans-serif; font-size:16px; line-height:1.6; background-color:#f9fcff; color:#003366; text-align:center; padding:20px;}
+h1 { font-size:36px; color:#00509e; margin-bottom:30px;}
+.mowafaq, .result-box, .summary-box, .final-report { background-color:#e0f7f1; border:2px solid #009966; border-radius:10px; padding:20px; margin:20px auto; max-width:600px; text-align:center;}
+.summary-box { background-color:#c2f0e1; border:2px solid #007744; border-radius:12px; padding:25px; font-size:20px; font-weight:bold; margin:20px auto;}
+button, .nav-button { background-color:#009966; color:white; padding:12px 25px; border-radius:10px; border:none; cursor:pointer; font-size:16px; margin:5px; transition:all 0.3s;}
+button:hover, .nav-button:hover { background-color:#007744;}
+button.selected { background-color:#005f44;}
+.mowafaq img { width:50px; height:50px; vertical-align:middle; margin-left:10px;}
+
+/* العلامة المائية */
+body::before {
+    content: "Worked by Mohamed and Abdallah";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 50px;
+    color: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Responsive Design للشاشات الصغيرة */
+@media (max-width: 600px) {
+    body { padding: 10px; font-size: 14px; }
+    h1 { font-size: 28px; }
+    .mowafaq, .result-box, .summary-box, .final-report { padding: 15px; width: 90%; margin: 15px auto; font-size: 16px; }
+    button, .nav-button { padding: 10px 15px; font-size: 14px; }
+    .mowafaq img { width: 40px; height: 40px; }
+}
+body{
+    font-family: Tahoma, Arial, sans-serif;
+    background: linear-gradient(135deg,#e3f2fd,#ffffff);
+    margin:0;
+    padding:0;
+    text-align:center;
+    color:#003366;
+}
+
+/* شريط التنقل */
+nav{
+    background:#00509e;
+    padding:15px;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-size:18px;
+    font-weight:bold;
+}
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* العناوين */
+h1{
+    margin:30px 0;
+    font-size:36px;
+    color:#003366;
+}
+
+/* كارت الموقف */
+.mowafaq{
+    background:white;
+    width:85%;
+    max-width:500px;
+    margin:25px auto;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:transform 0.3s;
+}
+.mowafaq:hover{
+    transform:scale(1.02);
+}
+
+.mowafaq img{
+    width:60px;
+    margin-bottom:10px;
+}
+
+.mowafaq p{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+/* الأزرار */
+button{
+    background:#009688;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    margin:8px;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+button:hover{
+    background:#00796b;
+    transform:scale(1.05);
+}
+
+/* زر إنهاء */
+#finish{
+    background:#ff9800;
+    font-size:18px;
+    padding:15px 30px;
+    margin:40px 0;
+}
+#finish:hover{
+    background:#fb8c00;
+}
+
+/* علامة مائية */
+body::after{
+    content:"Worked by Mohamed and Abdallah";
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    font-size:12px;
+    color:#777;
+}
+
+/* موبايل */
+@media(max-width:600px){
+    h1{font-size:28px;}
+    .mowafaq p{font-size:18px;}
+    button{font-size:15px;}
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f0f8ff, #e0f7fa);
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.mowafaq {
+    display: inline-block;
+    margin: 10px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.icon {
+    width: 50px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #a0e0ff;
+    transform: scale(1.05);
+}

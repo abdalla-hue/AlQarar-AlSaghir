@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>نتائج القرارات الصغيرة</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav style="text-align:center; margin-bottom:30px;">
+    <a href="index.html" class="nav-button">الرئيسية</a> |
+    <a href="mowafaq.html" class="nav-button">المواقف</a> |
+    <a href="results.html" class="nav-button">النتائج</a>
+</nav>
+<h1>نتائجك</h1>
+<div id="results-container"></div>
+
+<div class="final-report" id="final-report" style="display:none;">
+    <h2>تقرير نهائي</h2>
+    <p>
+        تهانينا! لقد استعرضت قراراتك اليومية، وكل اختيار تعلمك أن أبسط قرار يمكن أن يؤثر على نفسك، 
+        زملائك، ومدرستك. الموقع يساعدك على تطوير مهارات التفكير، المسؤولية، والتعاون. 
+        حاول تطبيق هذه القرارات في حياتك اليومية لتعزز وعيك وسلوكك الإيجابي.
+    </p>
+</div>
+
+<button onclick="showFinalReport()" id="show-report-btn">عرض التقرير النهائي</button>
+
+<script>
+const container = document.getElementById('results-container');
+const savedDecisions = JSON.parse(localStorage.getItem('decisions')) || [];
+let totalPoints = 0;
+savedDecisions.forEach((item,index)=>{
+    if(!item) return;
+    totalPoints += item.points;
+    const div = document.createElement('div');
+    div.className = 'result-box';
+    div.innerHTML = `<strong>الموقف ${index+1}:</strong> ${item.mowafaq}<br>
+                     <strong>القرار:</strong> ${item.choice}<br>
+                     <strong>الأثر:</strong> ${item.effect}<br>
+                     <strong>نقاطك لهذا القرار:</strong> ${item.points}`;
+    container.appendChild(div);
+});
+const summary = document.createElement('div');
+summary.className = 'summary-box';
+summary.innerHTML = `المجموع الكلي للنقاط: ${totalPoints} من ${savedDecisions.length}`;
+container.appendChild(summary);
+
+function showFinalReport() {
+    document.getElementById('final-report').style.display = 'block';
+    document.getElementById('show-report-btn').style.display = 'none';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>القرارات الصغيرة</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f0f8ff, #e0f7fa);
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+.mowafaq {
+    display: inline-block;
+    margin: 10px;
+}
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 20px;
+    width: 250px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+.icon {
+    width: 50px;
+    margin: 10px 0;
+}
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+button:hover {
+    background: #a0e0ff;
+    transform: scale(1.05);
+}
+#score-container{
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+<h1>القرارات الصغيرة</h1>
+<div id="score-container">
+    نقاطك: <span id="score">0</span> / <span id="q">1</span>
+</div>
+
+<!-- المواقف -->
+<div class="mowafaq">
+    <div class="card">
+        <p>صديقك نسي حقيبته في المدرسة، ماذا تفعل؟</p>
+        <img src=images/school_icon.png.png class="icon" alt="حقيبة">
+        <div class="buttons">
+            <button onclick="answer(1,true)">أساعده وأعيد الحقيبة</button>
+            <button onclick="answer(1,false)">أتجاهل الأمر</button>
+        </div>
+    </div>
+</div>
+
+<div class="mowafaq">
+    <div class="card">
+        <p>وجدت ورقة على الأرض في الفصل، ماذا تفعل؟</p>
+        <img src=images/trash_icon.png.png class="icon" alt="ورقة">
+        <div class="buttons">
+            <button onclick="answer(2,true)">ارميها في سله المهملات</button>
+            <button onclick="answer(2,false)">أتجاهلها</button>
+        </div>
+    </div>
+</div>
+<div class="mowafaq">
+    <div class="card">
+        <p>وجدت عمله على الأرض في الفصل، ماذا تفعل؟</p>
+        <img src=images/coin_icon.png.png class="icon" alt="عمله">
+        <div class="buttons">
+            <button onclick="answer(3,false)"> احتفظ بها </button>
+            <button onclick="answer(3,true)">اسال عن صاحبها</button>
+        </div>
+    </div>
+</div>
+<div class="mowafaq">
+    <div class="card">
+        <p>يريد اصاحبي انا اشارك معهم في الفريق، ماذا تفعل؟</p>
+        <img src=images/team_icon.png.png class="icon" alt="ورقة">
+        <div class="buttons">
+            <button onclick="answer(4,true)">اوافق</button>
+            <button onclick="answer(4,false)">لا اوافق</button>
+        </div>
+    </div>
+</div>
+<div class="mowafaq">
+  <div class="card">
+    <p>رأيت طالبًا يحتاج مساعدة في حل واجبه، ماذا تفعل؟</p>
+    <img src=images/book_icon.png.png class="icon" alt="واجب">
+    <div class="buttons">
+      <button onclick="answer(5,true)">أساعده وأشرح له</button>
+      <button onclick="answer(5,false)">أتجاهل الأمر</button>
+    </div>
+  </div>
+</div>
+<div class="mowafaq">
+  <div class="card">
+    <p>رأيت صديقك يتأخر عن الحصة، ماذا تفعل؟</p>
+    <img src=images/late_student_real.jpg.png class="icon" alt="تأخير">
+    <div class="buttons">
+      <button onclick="answer(6,true)">أرافقه بسرعة للحصة</button>
+      <button onclick="answer(6,false)">أتركه</button>
+    </div>
+  </div>
+</div>
+<div class="mowafaq">
+  <div class="card">
+    <p>رأيت كتابًا على الطاولة ولم يملكه أحد، ماذا تفعل؟</p>
+    <img src=images/book_real.jpg.png class="icon" alt="كتاب">
+    <div class="buttons">
+      <button onclick="answer(7,true)">أعيده للطالب المالك</button>
+      <button onclick="answer(7,false)">أتجاهل الكتاب</button>
+    </div>
+  </div>
+</div>
+<div class="mowafaq">
+  <div class="card">
+    <p>زميلك يواجه صعوبة في حل مسائل الرياضيات، ماذا تفعل؟</p>
+    <img src=images/math_help_real.jpg.png class="icon" alt="رياضيات">
+    <div class="buttons">
+      <button onclick="answer(8,true)">أشرحه له وأساعده</button>
+      <button onclick="answer(8,false)">أدعوه يحلها وحده</button>
+    </div>
+  </div>
+</div>
+<div class="mowafaq">
+  <div class="card">
+    <p>بعد النشاط المدرسي، هناك بقايا ورق وأقلام على الأرض، ماذا تفعل؟</p>
+    <img src=images/clean_class_real.jpg.png class="icon" alt="نظافة">
+    <div class="buttons">
+      <button onclick="answer(9,true)">أجمعها وأضعها في السلة</button>
+      <button onclick="answer(9,false)">أتجاهل الأمر</button>
+    </div>
+  </div>
+</div>
+<div class="mowafaq">
+  <div class="card">
+    <p>زميلك متوتر جدًا قبل الامتحان، ماذا تفعل؟</p>
+    <img src=images/exam_support_real.jpg class="icon" alt="تشجيع">
+    <div class="buttons">
+      <button onclick="answer(10,true)">أشجعه وأهدئه</button>
+      <button onclick="answer(10,false)">أتركه يقلق وحده</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let score = 0;
+let current = 1;
+const total = document.querySelectorAll(".mowafaq").length;
+
+function answer(id, correct){
+    if(correct){ score++; }
+
+    const card = document.querySelectorAll(".mowafaq")[id-1];
+    if(correct){
+        card.style.background = "#d0f0c0";
+        alert("✅ قرار ممتاز!");
+    } else {
+        card.style.background = "#f9d0d0";
+        alert("⚠️ حاول تركز!");
+    }
+
+    document.getElementById("score").innerText = score;
+    document.getElementById("q").innerText = current + 1;
+
+    if(current === total){
+        setTimeout(showReport, 300);
+    } else {
+        current++;
+    }
+}
+
+function showReport() {
+    let percent = (score / total) * 100;
+    let resultText = "";
+    let bgColor = "";
+
+    if (percent >= 80) {
+        resultText = "ممتاز 👍 قراراتك واعية ومسؤولة";
+        bgColor = "#c0f0c0";
+    } else if (percent >= 50) {
+        resultText = "جيد 🙂 بس محتاج تفكير أكتر";
+        bgColor = "#fef7c0";
+    } else {
+        resultText = "⚠️ ضعيف! ركز في قراراتك";
+        bgColor = "#f9d0d0";
+    }
+
+    document.body.innerHTML = `
+        <div style="text-align:center; background:${bgColor}; padding:50px; min-height:100vh">
+            <h1>التقرير النهائي</h1>
+            <p>درجتك: ${score} من ${total}</p>
+            <p>${resultText}</p>
+            <hr>
+            <button onclick="location.reload()">إعادة المحاولة</button>
+            <small>Worked by Mohamed & Abdallah</small>
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>
